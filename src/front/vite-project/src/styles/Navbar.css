@@ -1,3 +1,5 @@
+@import './common/Button.css';
+
 nav {
     display: flex;
     width: 100vw;
@@ -19,16 +21,5 @@ nav {
 }
 
 .nav--button {
-    background-color: #ff5200;
-    border: none;
-    border-radius: 5px;
-    width: 70px;
-    height: 35px;
-    margin-right: 10px;
-    cursor: pointer;
-    color: white;
-}
-
-.nav--button:hover {
-    background-color: #ff5100ad;
+    margin-right: 3px;
 }
