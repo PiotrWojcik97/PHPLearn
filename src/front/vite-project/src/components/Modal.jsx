@@ -1,6 +1,11 @@
 import React from "react";
 import "../styles/Modal.css";
 
+/**
+ * Modal class representing LogIn Popup
+ * @param {toggleModal} props 
+ * @returns Modal
+ */
 export default function Modal(props) {
     const [formData, setFormData] = React.useState({
         login: "",

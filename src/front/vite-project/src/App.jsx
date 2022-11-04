@@ -9,7 +9,7 @@ export default function App() {
 
     function toggleModal() {
     setModal(prevModal => !prevModal)
-}
+    }
 
     // prevent page scrolling while modal is active
     modal ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal')
@@ -20,5 +20,5 @@ export default function App() {
             <MainContent/>
             {modal && <Modal toggleModal={toggleModal} />}
         </div>
-  )
+    )
 }
