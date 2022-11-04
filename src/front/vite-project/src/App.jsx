@@ -6,7 +6,7 @@ import Modal from './components/Modal'
 
 export default function App() {
 
-  const [isLoginPopupShown, setIsLoginPopupShown] = React.useState(false)
+  const [isModalActive, setIsModalActive] = React.useState(false);
   
   function toogleLoginPopup(){
     setIsLoginPopupShown( prevIsLoginPopupShown => !prevIsLoginPopupShown)
