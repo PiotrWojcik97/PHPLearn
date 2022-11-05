@@ -3,13 +3,14 @@ import './styles/App.css'
 import Navbar from './components/Navbar'
 import MainContent from './components/MainContent'
 import Modal from './components/Modal'
-import { getMonth } from "./utils/utils"
+import { getMonth, calculateEventTable } from "./utils/utils"
 import globals from './utils/globals'
+import exampleData from './utils/data'
 
 export default function App() {
     const [modal, setModal] = React.useState(false);
     const [currentMonth, setCurrentMonth] = React.useState(getMonth(globals.currentMonthIndex - 1))
-    
+    const eventArray = calculateEventTable(exampleData)
     function changeMonth(event) {
         const {name} = event.target
         if(name === "decrement")

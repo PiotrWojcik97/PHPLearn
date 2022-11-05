@@ -1,4 +1,5 @@
 import React from 'react'
+import Event from './Event';
 import "../styles/Day.css";
 
 export default function Day(props) {
@@ -15,7 +16,11 @@ export default function Day(props) {
     return (
         <div className='tile-div' ref={divRef} onClick={handleClick}>
             <span>{props.day.format('DD')}</span>
-            
+            <div>
+                <Event />
+                <Event />
+                <Event />
+            </div>
         </div>
     )
 }

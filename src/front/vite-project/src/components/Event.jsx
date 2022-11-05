@@ -1,7 +1,12 @@
 import React from 'react'
+import "../styles/Event.css";
 
-export default function Event() {
+
+
+export default function Event(props) {
   return (
-    <div>Event</div>
+    <div className='event-container'>
+      <div className='event-div'></div>
+    </div>
   )
 }
