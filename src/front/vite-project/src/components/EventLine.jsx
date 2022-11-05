@@ -10,9 +10,23 @@ export default function EventLine(props) {
     return false
   }
 
+  let events = (<></>)
+  if(isEventPresent())
+  {
+    events = props.eventArray.map( (eventItem, idx) => {
+      return (
+        <Event
+          key={idx}
+          startPos={eventItem.startTime}
+          endPos={eventItem.endTime}
+        />
+      )
+    })
+  }
+
   return (
     <div className='event-container'>
-      { isEventPresent() && <div className='event-div'></div>}
+      {events}
     </div>
   )
 }

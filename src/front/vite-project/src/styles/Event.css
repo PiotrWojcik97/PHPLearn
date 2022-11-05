@@ -1,14 +1,14 @@
 .event-div {
+    position: absolute;
     background-color: blueviolet;
     border-radius: 10px;
-    margin-left: 10px; /* var */
     float: left;
-    width: 40px; /* var */
     height: 36px;
 }
 
 .event-container {
     background-color: aqua;
+    position: relative;
     margin-top: 4px;
     height: 36px;
 }
