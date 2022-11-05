@@ -1,11 +1,5 @@
 import dayjs from 'dayjs'
 
-
-/**
- * 
- * @param {*} month
- * 
- */
 export function getMonth(month = dayjs().month() ){
     // future parameters 
     const POLISH_CALENDAR_FORMAT = 0

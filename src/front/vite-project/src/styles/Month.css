@@ -1,5 +1,23 @@
 .month-div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 1px;
+    gap: 2px;
+}
+
+.month-name {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.month-name > h3 {
+    text-align: center;
+    justify-content: center;
+    padding-top: 0px;
+    width: 130px;
+}
+
+#calendar-button {
+    margin: 10px;
+    width: 40px;    
 }
