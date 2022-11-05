@@ -32,7 +32,10 @@ export default function App() {
     return (
         <div className="App">
             <Navbar toggleModal={toggleModal}/>
-            <MainContent currentMonth={currentMonth} changeMonth={changeMonth} />
+            <MainContent
+                currentMonth={currentMonth}
+                changeMonth={changeMonth}
+                eventArray={eventArray} />
             {modal && <Modal toggleModal={toggleModal} />}
         </div>
     )

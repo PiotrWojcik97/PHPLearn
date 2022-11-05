@@ -57,7 +57,7 @@ export function calculateEventTable(data){
 
         // handle multi-day event
         if(startDate.getDate() != endDate.getDate()) {
-            for(let i=startDate.getDate(); i != endDate.getDate()+1; i++)
+            for(let i=startDate.getDate(); i != endDate.getDate(); i++)
             {
                 let start_time
                 let end_time

@@ -5,7 +5,11 @@ export default function MainContent(props) {
 
     return (
         <main>
-            <Month month={props.currentMonth} changeMonth={props.changeMonth} />
+            <Month 
+                month={props.currentMonth} 
+                changeMonth={props.changeMonth}
+                eventArray={props.eventArray}
+            />
         </main>
     )
 }

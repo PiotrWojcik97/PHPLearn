@@ -17,6 +17,29 @@ import "../styles/Month.css";
 export default function Month(props) {
   const lt = "<"
   const gt = ">"
+  let isCurrentMonthOK = false
+  let prevDay = 0
+
+  // determine if events are related to current month
+  function currentMonthDay(day) {
+    const time = new Date(day)
+    const date = time.getDate()
+
+    if(!isCurrentMonthOK && date > 0 && prevDay == 0) {
+      isCurrentMonthOK = true
+      return props.eventArray[date]
+    }
+    else if(isCurrentMonthOK && date > prevDay )
+    {
+      prevDay = date
+      return props.eventArray[date]
+    }
+    else if(isCurrentMonthOK){
+      isCurrentMonthOK = false
+      return props.eventArray[date]
+    }
+    return null
+  }
 
   return (
     <div>
@@ -52,7 +75,11 @@ export default function Month(props) {
         <div className="month-div">
           {props.month.map((row, i) => {
             return row.map((day, j) => {
-              return <Day day={day} key={i * row.length + j} />;
+              return <Day
+                day={day}
+                key={i * row.length + j}
+                userEventArray={currentMonthDay(day)}
+              />;
             });
           })}
         </div>
