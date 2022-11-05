@@ -6,8 +6,14 @@ export default function Day(props) {
         console.log("Clicked!")
     }
     
+    const divRef = React.useRef(null);
+    
+    React.useEffect(() => {
+        console.log('width', divRef.current ? divRef.current.offsetWidth : 0);
+    }, [divRef.current]);
+
     return (
-        <div className='tile-div' onClick={handleClick}>
+        <div className='tile-div' ref={divRef} onClick={handleClick}>
             <span>{props.day.format('DD')}</span>
             
         </div>

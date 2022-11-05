@@ -17,7 +17,39 @@
     width: 130px;
 }
 
+.month-padding {
+    padding-left: 40px;
+}
+
 #calendar-button {
     margin: 10px;
     width: 40px;    
+}
+
+.calendar-box {
+    /* display: inline-flex; */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* background-color: lightgreen; */
+    /* justify-content: center; */
+}
+
+.month-sidebar {
+    /* background-color: aqua ; */
+    height: 50vh;
+    width: 40px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    float: left;
+    /* position: fixed; */
+}
+
+.calendar-faceimg {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.calendar-firstimg {
+    padding-top: 20px;
 }
