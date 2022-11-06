@@ -106,3 +106,9 @@ export const allowedColors = [
     "#85E3FF",
     "#D5AAFF",
 ]
+
+export const smallImagesArray = [
+    "dog_square_small.jpg",
+    "face_baby_square_small.jpg",
+    "face_girl_square_small.jpg",
+]

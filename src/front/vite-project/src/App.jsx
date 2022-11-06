@@ -37,16 +37,16 @@ export default function App() {
     modal || modalEvent ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal')
 
     return (
-        <div className="App">
-            <Navbar toggleModal={toggleModal}/>
-            <MainContent
-                currentMonth={currentMonth}
-                changeMonth={changeMonth}
-                eventArray={eventArray} 
-                toggleEventModal={toggleEventModal}
-                />
-            {modal && <Modal toggleModal={toggleModal} />}
-            {modalEvent && <ModalEvent toggleModal={toggleEventModal} />}
-        </div>
+            <div className="App">
+                <Navbar toggleModal={toggleModal}/>
+                <MainContent
+                    currentMonth={currentMonth}
+                    changeMonth={changeMonth}
+                    eventArray={eventArray} 
+                    toggleEventModal={toggleEventModal}
+                    />
+                {modal && <Modal toggleModal={toggleModal} />}
+                {modalEvent && <ModalEvent toggleModal={toggleEventModal} />}
+            </div>
     )
 }

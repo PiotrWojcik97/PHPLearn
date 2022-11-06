@@ -26,7 +26,7 @@ body.active-modal {
 }
 .modal-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
@@ -72,4 +72,44 @@ form {
 
 .form-button {
     margin: 15px;
+}
+
+textarea {
+    border: 1px solid gray;
+    border-radius: 4px;
+    display: block;
+    width: 92%;
+    height: 50px;
+}
+
+#color-span {
+    margin-top: 5px;
+}
+
+.warning-h4 {
+    color: red;
+    height: 45px;
+    width: 250px;
+    text-align: center;
+}
+
+.colorBox {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.div-boxesContainer {
+    display: flex;
+    margin-top: 5px;
+}
+
+.userBubble {
+    width: 40px;
+    border-radius: 50%;
+    padding: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
