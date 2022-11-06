@@ -19,6 +19,7 @@ export default function EventLine(props) {
           key={idx}
           startPos={eventItem.startTime}
           endPos={eventItem.endTime}
+          colorID={eventItem.colorID}
         />
       )
     })

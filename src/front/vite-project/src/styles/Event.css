@@ -1,13 +1,11 @@
 .event-div {
     position: absolute;
-    background-color: blueviolet;
     border-radius: 10px;
     float: left;
     height: 36px;
 }
 
 .event-container {
-    background-color: aqua;
     position: relative;
     margin-top: 4px;
     height: 36px;

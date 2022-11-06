@@ -54,10 +54,12 @@ export function calculateEventTable(data){
         const startDate = new Date(event.start_date)
         const endDate = new Date(event.end_date)
         const user_id = event.user_id
+        const colorName = event.event_type
+        console.log(colorName)
 
         // handle multi-day event
         if(startDate.getDate() != endDate.getDate()) {
-            for(let i=startDate.getDate(); i != endDate.getDate(); i++)
+            for(let i=startDate.getDate(); i != endDate.getDate()+1; i++)
             {
                 let start_time
                 let end_time
@@ -77,7 +79,8 @@ export function calculateEventTable(data){
                 }
                 arr[i][user_id].push({
                     startTime: start_time,
-                    endTime: end_time
+                    endTime: end_time,
+                    colorID: colorName
                 })
             }
         }
@@ -88,7 +91,8 @@ export function calculateEventTable(data){
             
             arr[startDate.getDate()][user_id].push({
                 startTime: start_time,
-                endTime: end_time
+                endTime: end_time,
+                colorID: colorName
             })
         }
     })

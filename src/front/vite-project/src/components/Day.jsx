@@ -3,23 +3,17 @@ import EventLine from './EventLine';
 import "../styles/Day.css";
 
 export default function Day(props) {
-    const divRef = React.useRef(null);
-
-    React.useEffect(() => {
-        console.log('width', divRef.current ? divRef.current.offsetWidth : 0);
-    }, [divRef.current]);
-
     function getEventArray(userNum) {
         if(props.userEventArray)
             return props.userEventArray[userNum]
     }
 
     function handleClick(event) {
-        console.log("Clicked!")
+        // console.log("Clicked!")
     }
     
     return (
-        <div className='tile-div' ref={divRef} onClick={handleClick}>
+        <div className='tile-div' onClick={handleClick}>
             <span>{props.day.format('DD')}</span>
             <div>
                 <EventLine eventArray={getEventArray(0)} maxWidth={100} />
