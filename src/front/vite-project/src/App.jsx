@@ -6,11 +6,14 @@ import Modal from './components/Modal'
 import { getMonth, calculateEventTable } from "./utils/utils"
 import globals from './utils/globals'
 import exampleData from './utils/data'
+import ModalEvent from './components/ModalEvent'
 
 export default function App() {
     const [modal, setModal] = React.useState(false);
+    const [modalEvent, setModalEvent] = React.useState(false);
     const [currentMonth, setCurrentMonth] = React.useState(getMonth(globals.currentMonthIndex - 1))
     const eventArray = calculateEventTable(exampleData)
+
     function changeMonth(event) {
         const {name} = event.target
         if(name === "decrement")
@@ -19,15 +22,19 @@ export default function App() {
             globals.currentMonthIndex++
 
         setCurrentMonth(getMonth(globals.currentMonthIndex - 1))
-        // isDecrementing ? setCurrentMonth(getMonth(10)) : setCurrentMonth(getMonth(12))
     }
 
     function toggleModal() {
         setModal(prevModal => !prevModal)
     }
 
-    // prevent page scrolling while modal is active
-    modal ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal')
+    function toggleEventModal() {
+        console.log("Modal clicked!")
+        setModalEvent(prevEventModal => !prevEventModal)
+    }
+
+    // prevent page scrolling while any of the modal is active
+    modal || modalEvent ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal')
 
     return (
         <div className="App">
@@ -35,8 +42,11 @@ export default function App() {
             <MainContent
                 currentMonth={currentMonth}
                 changeMonth={changeMonth}
-                eventArray={eventArray} />
+                eventArray={eventArray} 
+                toggleEventModal={toggleEventModal}
+                />
             {modal && <Modal toggleModal={toggleModal} />}
+            {modalEvent && <ModalEvent toggleModal={toggleEventModal} />}
         </div>
     )
 }

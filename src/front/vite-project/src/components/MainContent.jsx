@@ -7,6 +7,7 @@ export default function MainContent(props) {
         <main>
             <Month 
                 month={props.currentMonth} 
+                toggleEventModal={props.toggleEventModal}
                 changeMonth={props.changeMonth}
                 eventArray={props.eventArray}
             />

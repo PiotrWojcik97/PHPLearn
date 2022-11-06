@@ -21,9 +21,15 @@
     padding-left: 40px;
 }
 
-#calendar-button {
+#calendar-button-left {
     margin: 10px;
-    width: 40px;    
+    width: 40px;
+
+}
+
+#calendar-button-right {
+    margin: 10px;
+    width: 40px;
 }
 
 .calendar-box {
@@ -52,4 +58,16 @@
 
 .calendar-firstimg {
     padding-top: 20px;
+}
+
+#calendar-button-create {
+    margin: 10px;
+    width: 170px;
+    margin-left: 40px;
+}
+
+#calendar-button-save {
+    margin: 10px;
+    margin-right: auto; 
+    width: 170px;
 }

@@ -44,6 +44,28 @@ const exampleData = { data :
             img: "img url",
             event_type: 2
         },
+        {
+            _id: 4,
+            user_id: 2,
+            name: "event 3",
+            start_date: "2022-12-01T12:12:00.000Z",
+            end_date: "2022-12-01T12:12:00.000Z",
+            short_description: "Lorem ipsum dolor",
+            long_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt tempora labore repudiandae aspernatur accusantium harum expedita placeat in mollitia! Explicabo, ratione! Nulla eos reprehenderit alias laboriosam aperiam harum provident, unde totam quo culpa cum ipsam magni nostrum ea tempora.",
+            img: "img url",
+            event_type: 3
+        },
+        {
+            _id: 5,
+            user_id: 2,
+            name: "event 3",
+            start_date: "2022-12-01T12:52:00.000Z",
+            end_date: "2022-12-01T12:52:00.000Z",
+            short_description: "Lorem ipsum dolor",
+            long_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt tempora labore repudiandae aspernatur accusantium harum expedita placeat in mollitia! Explicabo, ratione! Nulla eos reprehenderit alias laboriosam aperiam harum provident, unde totam quo culpa cum ipsam magni nostrum ea tempora.",
+            img: "img url",
+            event_type: 4
+        },
     ]
 }
 export default exampleData

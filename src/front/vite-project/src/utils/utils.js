@@ -55,7 +55,6 @@ export function calculateEventTable(data){
         const endDate = new Date(event.end_date)
         const user_id = event.user_id
         const colorName = event.event_type
-        console.log(colorName)
 
         // handle multi-day event
         if(startDate.getDate() != endDate.getDate()) {
@@ -99,3 +98,11 @@ export function calculateEventTable(data){
 
     return arr
 }
+
+export const allowedColors = [
+    "#A79AFF",
+    "#FFBEBC",
+    "#FFF5BA",
+    "#85E3FF",
+    "#D5AAFF",
+]
