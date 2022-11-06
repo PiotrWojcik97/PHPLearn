@@ -14,7 +14,6 @@ export default function Modal(props) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(formData)
     }
 
     function handleFormChange(event) {

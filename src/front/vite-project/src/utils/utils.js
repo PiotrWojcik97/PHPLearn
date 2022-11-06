@@ -100,11 +100,11 @@ export function calculateEventTable(data){
 }
 
 export const allowedColors = [
-    "#A79AFF",
-    "#FFBEBC",
-    "#FFF5BA",
-    "#85E3FF",
-    "#D5AAFF",
+    "#A79AFF9F",
+    "#FFBEBC9F",
+    "#FFF5BA9F",
+    "#85E3FF9F",
+    "#D5AAFF9F",
 ]
 
 export const smallImagesArray = [

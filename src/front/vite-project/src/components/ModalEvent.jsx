@@ -3,7 +3,8 @@ import { allowedColors, smallImagesArray } from "../utils/utils";
 import "../styles/Modal.css";
 import ColorBox from "./ColorBox";
 import UserBubble from "./UserBubble";
-
+import globals from "../utils/globals";
+import exampleData from "../utils/data";
 /**
  * Modal class representing Create Event Popup
  * @param {toggleModal} props 
@@ -51,7 +52,6 @@ export default function ModalEvent(props) {
     }
 
     function handleUserBubbleClick(userBubbleID) {
-        console.log(userBubbleID)
         setFormData(prevFormData => ({
             ...prevFormData,
             userID: userBubbleID
@@ -59,7 +59,7 @@ export default function ModalEvent(props) {
     }
 
     // returns true if everything is ok
-    function validateForm() {
+    function _validateForm() {
         if(!formData.startDate) {
             setErrorMessage("Start date cannot be empty")
             return false
@@ -86,11 +86,36 @@ export default function ModalEvent(props) {
         return true
     }
 
+    function _areStartDateAndEndDateInCurrentMonth(currentMonth) {
+        const startMonth = new Date(formData.startDate).getMonth() + 1
+        const endMonth = new Date(formData.endDate).getMonth() + 1
+        if(currentMonth == startMonth && currentMonth == endMonth)
+            return true
+        return false
+    }
+
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(formData)
-        if(validateForm()){
-            // TODO: append
+        if(_validateForm()){
+            if(_areStartDateAndEndDateInCurrentMonth(globals.currentMonthIndex)) {
+                const data = {
+                    _id: 0,
+                    user_id: formData.userID,
+                    name: formData.name,
+                    start_date: formData.startDate,
+                    end_date: formData.endDate,
+                    short_description: formData.shortDescription,
+                    long_description: formData.longDescription,
+                    img: "img url",
+                    event_type: formData.eventType
+                }
+                exampleData.data.push(data)
+                // sent data to database with async here
+            }
+            else {
+                // divide algorithm from utils here
+            }
+            props.notifyEventUpdate()
         }
     }
 

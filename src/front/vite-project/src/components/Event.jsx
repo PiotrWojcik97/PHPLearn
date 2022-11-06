@@ -13,7 +13,7 @@ export default function Event(props) {
     function calculateEventWidth() {
         let width = 0
         if(isDurationEventSmall()) {
-            width = 5
+            width = 8
         }
         else {
             width = 100*(props.endPos-props.startPos)

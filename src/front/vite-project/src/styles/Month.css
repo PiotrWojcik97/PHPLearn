@@ -62,12 +62,7 @@
 
 #calendar-button-create {
     margin: 10px;
-    width: 170px;
+    width: 150px;
     margin-left: 40px;
-}
-
-#calendar-button-save {
-    margin: 10px;
     margin-right: auto; 
-    width: 170px;
 }

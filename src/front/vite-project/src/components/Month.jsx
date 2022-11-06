@@ -44,7 +44,6 @@ export default function Month(props) {
     <div>
       <div className='month-name'>
         <button id="calendar-button-create" onClick={props.toggleEventModal}>Create Event</button>
-        <button id="calendar-button-save" >Save Calendar</button>
         <button id="calendar-button-left" name="decrement" onClick={props.changeMonth}>{parse(lt)}</button>
         <h3>{props.month[2][1].format("MMMM")}</h3>
         <button id="calendar-button-right" name="increment" onClick={props.changeMonth}>{parse(gt)}</button>

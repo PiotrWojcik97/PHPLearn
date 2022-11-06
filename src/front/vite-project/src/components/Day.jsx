@@ -8,12 +8,8 @@ export default function Day(props) {
             return props.userEventArray[userNum]
     }
 
-    function handleClick(event) {
-        // console.log("Clicked!")
-    }
-    
     return (
-        <div className='tile-div' onClick={handleClick}>
+        <div className='tile-div'>
             <span>{props.day.format('DD')}</span>
             <div>
                 <EventLine eventArray={getEventArray(0)} maxWidth={100} />

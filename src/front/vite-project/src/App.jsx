@@ -12,7 +12,11 @@ export default function App() {
     const [modal, setModal] = React.useState(false);
     const [modalEvent, setModalEvent] = React.useState(false);
     const [currentMonth, setCurrentMonth] = React.useState(getMonth(globals.currentMonthIndex - 1))
-    const eventArray = calculateEventTable(exampleData)
+    const [eventArray, setEventArray] = React.useState(calculateEventTable(exampleData))
+
+    function notifyEventUpdate() {
+        setEventArray(calculateEventTable(exampleData))
+    }
 
     function changeMonth(event) {
         const {name} = event.target
@@ -29,7 +33,6 @@ export default function App() {
     }
 
     function toggleEventModal() {
-        console.log("Modal clicked!")
         setModalEvent(prevEventModal => !prevEventModal)
     }
 
@@ -46,7 +49,7 @@ export default function App() {
                     toggleEventModal={toggleEventModal}
                     />
                 {modal && <Modal toggleModal={toggleModal} />}
-                {modalEvent && <ModalEvent toggleModal={toggleEventModal} />}
+                {modalEvent && <ModalEvent toggleModal={toggleEventModal} notifyEventUpdate={notifyEventUpdate} />}
             </div>
     )
 }
