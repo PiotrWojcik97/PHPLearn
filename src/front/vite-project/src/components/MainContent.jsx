@@ -30,7 +30,7 @@ export default function MainContent(props) {
                     </span>
                     <h2 className="title">Used Tools</h2>
                     <span>
-                        Application is divided to front and back end. Front was written in React, backend is written in PHP.<br />
+                        Application is divided to front and back end. Front is written in React, backend is written in PHP.<br />
                         Communication between front and back end is done by REST API.<br />
                         Data such as events and accounts are stored in MySQL database.
                     </span>
