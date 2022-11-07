@@ -66,3 +66,29 @@
     margin-left: 40px;
     margin-right: auto; 
 }
+
+.title {
+    color: #ff5200;
+}
+
+.about-div {
+    margin: 30px;
+}
+
+.about-table {
+    border: 1px #ff5200 solid;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 200px;
+    display: flex;
+    padding: 5px;
+}
+
+.about-table > div {
+    width: 50%;
+}
+
+
+.about-table > div > div {
+    padding: 3px;
+}

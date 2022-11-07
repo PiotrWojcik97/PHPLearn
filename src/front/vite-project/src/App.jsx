@@ -13,6 +13,8 @@ export default function App() {
     const [modalEvent, setModalEvent] = React.useState(false);
     const [currentMonth, setCurrentMonth] = React.useState(getMonth(globals.currentMonthIndex - 1))
     const [eventArray, setEventArray] = React.useState(calculateEventTable(exampleData))
+    const [isAboutActive, setAboutActive] = React.useState(false)
+
 
     function notifyEventUpdate() {
         setEventArray(calculateEventTable(exampleData))
@@ -41,12 +43,13 @@ export default function App() {
 
     return (
             <div className="App">
-                <Navbar toggleModal={toggleModal}/>
+                <Navbar toggleModal={toggleModal} setAboutActive={setAboutActive}/>
                 <MainContent
                     currentMonth={currentMonth}
                     changeMonth={changeMonth}
                     eventArray={eventArray} 
                     toggleEventModal={toggleEventModal}
+                    isAboutActive={isAboutActive}
                     />
                 {modal && <Modal toggleModal={toggleModal} />}
                 {modalEvent && <ModalEvent toggleModal={toggleEventModal} notifyEventUpdate={notifyEventUpdate} />}
