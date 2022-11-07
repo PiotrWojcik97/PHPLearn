@@ -65,13 +65,13 @@ export function calculateEventTable(data){
                 let end_time
                 if(i == startDate.getDate())
                 {
-                    start_time = ((startDate.getHours()-1) / 24) + (startDate.getMinutes() / 1440)
+                    start_time = ((startDate.getHours()) / 24) + (startDate.getMinutes() / 1440)
                     end_time = 23.999 / 24
                 }
                 else if(i == endDate.getDate())
                 {
                     start_time = 0
-                    end_time = ((endDate.getHours()-1) / 24) + (endDate.getMinutes() / 1440)
+                    end_time = ((endDate.getHours()) / 24) + (endDate.getMinutes() / 1440)
                 }
                 else {
                     start_time = 0
@@ -87,8 +87,8 @@ export function calculateEventTable(data){
         }
         //handle event which duration does not exceed one day 
         else {
-            let start_time = ((startDate.getHours()-1) / 24) + (startDate.getMinutes() / 1440)
-            let end_time = ((endDate.getHours()-1) / 24) + (endDate.getMinutes() / 1440)
+            let start_time = ((startDate.getHours()) / 24) + (startDate.getMinutes() / 1440)
+            let end_time = ((endDate.getHours()) / 24) + (endDate.getMinutes() / 1440)
             
             arr[startDate.getDate()][user_id].push({
                 startTime: start_time,
