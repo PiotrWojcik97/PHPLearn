@@ -1,6 +1,7 @@
 import React from 'react'
 import "../styles/Event.css";
 import { allowedColors } from '../utils/utils';
+import globals from '../utils/globals';
 
 export default function Event(props) {
 
@@ -21,6 +22,11 @@ export default function Event(props) {
         return width
     }
 
+    function EventClicked() {
+        globals.currentEventClicked = props.eventID
+        props.toggleModalEventContent()
+    }
+
     return (
         <div
             className='event-div'
@@ -28,6 +34,7 @@ export default function Event(props) {
                     "marginLeft": `${100*(props.startPos)}%`,
                     "backgroundColor": `${allowedColors[props.colorID]}`
                 }}
+            onClick={EventClicked}
         />
     )
 }

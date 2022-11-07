@@ -7,10 +7,12 @@ import { getMonth, calculateEventTable } from "./utils/utils"
 import globals from './utils/globals'
 import exampleData from './utils/data'
 import ModalEvent from './components/ModalEvent'
+import ModalEventContent from './components/ModalEventContent'
 
 export default function App() {
     const [modal, setModal] = React.useState(false);
     const [modalEvent, setModalEvent] = React.useState(false);
+    const [modalEventContent, setModalEventContent] = React.useState(false);
     const [currentMonth, setCurrentMonth] = React.useState(getMonth(globals.currentMonthIndex - 1))
     const [eventArray, setEventArray] = React.useState(calculateEventTable(exampleData))
     const [isAboutActive, setAboutActive] = React.useState(false)
@@ -19,7 +21,6 @@ export default function App() {
     function notifyEventUpdate() {
         setEventArray(calculateEventTable(exampleData))
     }
-
     function changeMonth(event) {
         const {name} = event.target
         if(name === "decrement")
@@ -38,6 +39,10 @@ export default function App() {
         setModalEvent(prevEventModal => !prevEventModal)
     }
 
+    function toggleModalEventContent() {
+        setModalEventContent(prevModalEventContent => !prevModalEventContent)
+    }
+
     // prevent page scrolling while any of the modal is active
     modal || modalEvent ? document.body.classList.add('active-modal') : document.body.classList.remove('active-modal')
 
@@ -49,10 +54,12 @@ export default function App() {
                     changeMonth={changeMonth}
                     eventArray={eventArray} 
                     toggleEventModal={toggleEventModal}
+                    toggleModalEventContent={toggleModalEventContent}
                     isAboutActive={isAboutActive}
                     />
                 {modal && <Modal toggleModal={toggleModal} />}
                 {modalEvent && <ModalEvent toggleModal={toggleEventModal} notifyEventUpdate={notifyEventUpdate} />}
+                {modalEventContent && <ModalEventContent toggleModal={toggleModalEventContent} eventID={globals.currentEventClicked} notifyEventUpdate={notifyEventUpdate} />}
             </div>
     )
 }

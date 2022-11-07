@@ -10,6 +10,9 @@ import exampleData from "../utils/data";
  * @param {toggleModal} props 
  * @returns Modal
  */
+
+// TODO: should be better name e.g. ModalEventAdding
+// TODO: create one parent Modal and ModalContent instead of 3 modalsX
 export default function ModalEvent(props) {
     const [formData, setFormData] = React.useState({
         startDate: null,

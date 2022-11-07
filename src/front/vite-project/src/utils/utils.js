@@ -34,10 +34,10 @@ function _create_3_DimensionalArray() {
     const NUM_USERS = 3
     
     // create first dimension
-    let arr = new Array(NUM_DAYS)
+    let arr = new Array(NUM_DAYS).fill()
     // create the second dimension
     for(let i=0; i < arr.length; i++)
-        arr[i] = new Array(NUM_USERS)
+        arr[i] = new Array(NUM_USERS).fill()
     // create the third dimension
     for(let i=0; i < arr.length; i++)
         for(let j=0; j < arr[0].length; j++)
@@ -55,7 +55,8 @@ export function calculateEventTable(data){
         const endDate = new Date(event.end_date)
         const user_id = event.user_id
         const colorName = event.event_type
-
+        const eventID = event._id
+        
         // handle multi-day event
         if(startDate.getDate() != endDate.getDate()) {
             for(let i=startDate.getDate(); i != endDate.getDate()+1; i++)
@@ -79,7 +80,8 @@ export function calculateEventTable(data){
                 arr[i][user_id].push({
                     startTime: start_time,
                     endTime: end_time,
-                    colorID: colorName
+                    colorID: colorName,
+                    eventID: eventID,
                 })
             }
         }
@@ -91,7 +93,8 @@ export function calculateEventTable(data){
             arr[startDate.getDate()][user_id].push({
                 startTime: start_time,
                 endTime: end_time,
-                colorID: colorName
+                colorID: colorName,
+                eventID: eventID,
             })
         }
     })

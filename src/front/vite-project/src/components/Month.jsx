@@ -54,23 +54,27 @@ export default function Month(props) {
         })}
       </div>
       <div className="calendar-box">
-        {/* month sidebar should be generated instead of statically written- future job to do */}
+        {/* TODO: month sidebar should be generated instead of statically written- future job to do */}
         <div className="month-sidebar">
-          <img className="calendar-faceimg calendar-firstimg" src="face_baby_square_small.jpg"/>
+          <img className="calendar-faceimg calendar-firstimg" src="dog_square_small.jpg"/>
+          <img className="calendar-faceimg" src="face_baby_square_small.jpg"/>
           <img className="calendar-faceimg" src="face_girl_square_small.jpg"/>
-          <img className="calendar-faceimg" src="dog_square_small.jpg"/>
-          <img className="calendar-faceimg calendar-firstimg" src="face_baby_square_small.jpg"/>
+
+          <img className="calendar-faceimg calendar-firstimg" src="dog_square_small.jpg"/>
+          <img className="calendar-faceimg" src="face_baby_square_small.jpg"/>
           <img className="calendar-faceimg" src="face_girl_square_small.jpg"/>
-          <img className="calendar-faceimg" src="dog_square_small.jpg"/>
-          <img className="calendar-faceimg calendar-firstimg" src="face_baby_square_small.jpg"/>
+
+          <img className="calendar-faceimg calendar-firstimg" src="dog_square_small.jpg"/>
+          <img className="calendar-faceimg" src="face_baby_square_small.jpg"/>
           <img className="calendar-faceimg" src="face_girl_square_small.jpg"/>
-          <img className="calendar-faceimg" src="dog_square_small.jpg"/>
-          <img className="calendar-faceimg calendar-firstimg" src="face_baby_square_small.jpg"/>
+
+          <img className="calendar-faceimg calendar-firstimg" src="dog_square_small.jpg"/>
+          <img className="calendar-faceimg" src="face_baby_square_small.jpg"/>
           <img className="calendar-faceimg" src="face_girl_square_small.jpg"/>
-          <img className="calendar-faceimg" src="dog_square_small.jpg"/>
-          <img className="calendar-faceimg calendar-firstimg" src="face_baby_square_small.jpg"/>
+
+          <img className="calendar-faceimg calendar-firstimg" src="dog_square_small.jpg"/>
+          <img className="calendar-faceimg" src="face_baby_square_small.jpg"/>
           <img className="calendar-faceimg" src="face_girl_square_small.jpg"/>
-          <img className="calendar-faceimg" src="dog_square_small.jpg"/>
         </div>
         <div className="month-div">
           {props.month.map((row, i) => {
@@ -79,6 +83,7 @@ export default function Month(props) {
                 day={day}
                 key={i * row.length + j}
                 userEventArray={currentMonthDay(day)}
+                toggleModalEventContent={props.toggleModalEventContent}
               />;
             });
           })}

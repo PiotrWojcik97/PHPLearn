@@ -30,8 +30,8 @@ export default function MainContent(props) {
                     </span>
                     <h2 className="title">Used Tools</h2>
                     <span>
-                        Application is divided to front and backend. Front was written in React, backend is written in PHP.<br />
-                        Communication between front and backend is done by REST API.<br />
+                        Application is divided to front and back end. Front was written in React, backend is written in PHP.<br />
+                        Communication between front and back end is done by REST API.<br />
                         Data such as events and accounts are stored in MySQL database.
                     </span>
                     </div>
@@ -41,6 +41,7 @@ export default function MainContent(props) {
                         toggleEventModal={props.toggleEventModal}
                         changeMonth={props.changeMonth}
                         eventArray={props.eventArray}
+                        toggleModalEventContent={props.toggleModalEventContent}
                     />
             }
         </main>

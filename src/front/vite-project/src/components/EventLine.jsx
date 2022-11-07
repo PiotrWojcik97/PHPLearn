@@ -9,7 +9,7 @@ export default function EventLine(props) {
       return true
     return false
   }
-
+  
   let events = (<></>)
   if(isEventPresent())
   {
@@ -17,9 +17,11 @@ export default function EventLine(props) {
       return (
         <Event
           key={idx}
+          eventID={eventItem.eventID}
           startPos={eventItem.startTime}
           endPos={eventItem.endTime}
           colorID={eventItem.colorID}
+          toggleModalEventContent = {props.toggleModalEventContent}
         />
       )
     })
