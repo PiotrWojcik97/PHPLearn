@@ -9,7 +9,7 @@ include_once '../../models/Users.php';
 $database = new Database();
 $db = $database->connect();
 
-$result = $post->read();
+$result = $users->read();
 // debug in home what's the result
 
 $num_of_rows = $result->rowCount();

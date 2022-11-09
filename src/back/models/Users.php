@@ -18,7 +18,7 @@ class Users
     {
         $query = 
             'SELECT u.id, u.username, u.password
-            FROM' . $this->table . 'as u';
+            FROM' . $this->table . ' as u';
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
